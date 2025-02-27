@@ -2,20 +2,20 @@ package com.example.marvApiJava.Models;
 
 public class Heroes_stats extends Heroes {
 
-    Long id;
-    Long strength;
-    Long intelligence;
-    Long combat;
-    Long speed;
-    Long durability;
-    Long power;
-    Long total;
+    int id;
+    int strength;
+    int intelligence;
+    int combat;
+    int speed;
+    int durability;
+    int power;
+    int total;
     String alias;
     String real_name;
     String description;
 
 
-    public Heroes_stats(String alias, String real_name, String description, Long strength, Long intelligence, Long combat, Long speed, Long durability, Long power) {
+    public Heroes_stats(String alias, String real_name, String description, int strength, int intelligence, int combat, int speed, int durability, int power) {
         super(alias, real_name, description);
         this.strength = strength;
         this.intelligence = intelligence;
@@ -25,19 +25,19 @@ public class Heroes_stats extends Heroes {
         this.power = power;
     }
 
-    public Long getStrength() {
+    public int getStrength() {
         return strength;
     }
 
-    public void setStrength(Long strength) {
+    public void setStrength(int strength) {
         this.strength = strength;
     }
 
-    public Long getIntelligence() {
+    public int getIntelligence() {
         return intelligence;
     }
 
-    public void setIntelligence(Long intelligence) {
+    public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
     }
 
@@ -51,35 +51,35 @@ public class Heroes_stats extends Heroes {
         this.real_name = real_name;
     }
 
-    public Long getCombat() {
+    public int getCombat() {
         return combat;
     }
 
-    public void setCombat(Long combat) {
+    public void setCombat(int combat) {
         this.combat = combat;
     }
 
-    public Long getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
-    public void setSpeed(Long speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    public Long getDurability() {
+    public int getDurability() {
         return durability;
     }
 
-    public void setDurability(Long durability) {
+    public void setDurability(int durability) {
         this.durability = durability;
     }
 
-    public Long getPower() {
+    public int getPower() {
         return power;
     }
 
-    public void setPower(Long power) {
+    public void setPower(int power) {
         this.power = power;
     }
 
@@ -103,19 +103,19 @@ public class Heroes_stats extends Heroes {
         this.description = description;
     }
 
-    public Long getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(Long total) {
+    public void setTotal(int total) {
         this.total = strength + intelligence + combat + speed + durability + power;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

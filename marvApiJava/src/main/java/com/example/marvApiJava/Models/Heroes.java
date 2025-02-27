@@ -1,8 +1,14 @@
 package com.example.marvApiJava.Models;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "heroes")
 public class Heroes {
 
-        Long hero_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        int hero_id;
         String alias;
         String image_url;
         String real_name;
@@ -16,11 +22,11 @@ public class Heroes {
         this.description = description;
     }
 
-    public Long getHero_id() {
+    public int getHero_id() {
         return hero_id;
     }
 
-    public void setHero_id(Long hero_id) {
+    public void setHero_id(int hero_id) {
         this.hero_id = hero_id;
     }
 
