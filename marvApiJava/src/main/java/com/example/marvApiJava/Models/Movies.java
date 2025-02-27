@@ -11,14 +11,15 @@ public class Movies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int movie_id;
     String title;
-//    Integer release_year;
+    int release_year;
 
     public Movies() {} ;
 
     public Movies(int movie_id, String title, int release_year) {
         this.movie_id = movie_id;
         this.title = title;
-//        this.release_year = release_year;
+
+            this.release_year = release_year;
     }
 
     public int getMovie_id() {
@@ -37,12 +38,12 @@ public class Movies {
         this.title = title;
     }
 
-//    public int getRelease_year() {
-//        return release_year;
-//    }
-//
-//    public void setRelease_year(int release_year) {
-//        this.release_year = release_year;
-//    }
+    public int getRelease_year() {
+        return release_year;
+    }
+
+    public void setRelease_year(int release_year) {
+        this.release_year = release_year;
+    }
 
 }//end of Movies

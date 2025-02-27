@@ -39,6 +39,4 @@ public class MovieController {
         marvelRepoMovies.deleteById(id);
     }
 
-
-
 }
