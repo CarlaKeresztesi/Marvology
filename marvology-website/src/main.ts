@@ -4,8 +4,12 @@ const heroImgsContainer = document.querySelector<HTMLInputElement>('.heroes-cont
 const movieInputBox = document.querySelector<HTMLInputElement>('#moviesInput')
 const moviesForm = document.querySelector<HTMLFormElement>('#moviesForm')
 const moviesSelected = document.querySelector<HTMLDivElement>('.movies-container--selectedMovies')
+const addMoveForm = document.querySelector<HTMLFormElement>('#movieAddName')
+const movieAddNameInput = document.querySelector<HTMLInputElement>('#movieAddName')
+const movieAddYearInput = document.querySelector<HTMLInputElement>('#movieAddYear')
 
-if(!heroImgsContainer || !movieInputBox || !moviesForm || !moviesSelected){
+
+if(!heroImgsContainer || !movieInputBox || !moviesForm || !moviesSelected ){
     throw new Error('couldnt find it!')
 }
 
@@ -21,6 +25,16 @@ type Movie = {
     id : number,
     title : string,
     release_year : number
+}
+
+const handleMoveiPost = async (event : SubmitEvent) => {
+    event?.preventDefault();
+    const response = await fetch("http://localhost:8080/movies/addMovie", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title: movieAddNameInput.value, release_year: movieAddYearInput.value }),
+  });
+  return await response.json();
 }
 
 const handleMovieSearch = async (event : SubmitEvent) => {
@@ -94,4 +108,5 @@ const handleImgUpdate = async () => {
 
 handleImgUpdate()
 
+addMoveForm?.addEventListener("submit", handleMoveiPost)
 moviesForm.addEventListener("submit", handleMovieSearch);
