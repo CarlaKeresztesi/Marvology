@@ -12,11 +12,17 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    background-color: #ED1D24;
 }
 
 .nav-container--title{
     // display: flex;
     text-align: center;
+    background-color: #ED1D24;
+    color: white;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 80px;
+    text-shadow: 5px 0px black;
 
 }
 .nav-container--list{
@@ -26,8 +32,9 @@
     color: white;
     margin: 10px;
     background-color: #ED1D24;
-    border: solid black 2px;
     font-size: 30px;
-    text-shadow: black;
+    text-shadow: 2px 2px black;
+    font-weight: 500;
+    list-style: none;
 
 }
