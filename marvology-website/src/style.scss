@@ -8,7 +8,6 @@
 }
 
 .nav-container{
-    border: solid green 3px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -37,4 +36,21 @@
     font-weight: 500;
     list-style: none;
 
+}
+
+.main-container{
+    max-width: 100%;
+}
+
+.heroes-container{
+    margin-top: 40px;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.hero-text{
+    max-width: 256px;
 }
