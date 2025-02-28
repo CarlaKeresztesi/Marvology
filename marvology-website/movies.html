@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARVOLOGY</title>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <h1 class="nav-container--title">MARVOLOGY</h1>
+            <ul class="nav-container--list">
+                <li><a href="./index.html">HEROES</a></li>
+                <li><a href="#movies">MOVIES</a></li>
+                <li>STATS</li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="movies-container" id="movies">
+                <form id="moviesForm">
+                    <input type="text" id="moviesInput" placeholder="Please enter movie name"></input>
+                    <button type="click" id="moviesSubmitButton">Search</button>
+                </form>
+                <div class="movies-container--selectedMovies"></div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

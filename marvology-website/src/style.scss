@@ -35,8 +35,16 @@
     text-shadow: 2px 2px black;
     font-weight: 500;
     list-style: none;
-
+    text-decoration: none;
+        & a:link,
+          a:visited,
+          a:hover,
+          a:active {
+            text-decoration: none;
+            color: white;
+        }
 }
+
 
 .main-container{
     max-width: 100%;
