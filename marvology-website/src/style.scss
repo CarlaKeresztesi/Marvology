@@ -21,9 +21,13 @@
 }
 .nav-container--list{
     display: flex;
-    // text-align: center;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     justify-content: space-around;
+    color: white;
     margin: 10px;
+    background-color: #ED1D24;
     border: solid black 2px;
+    font-size: 30px;
+    text-shadow: black;
 
 }
