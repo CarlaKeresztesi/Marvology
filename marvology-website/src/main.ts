@@ -1,9 +1,11 @@
 import './style.scss'
 
 const heroImgsContainer = document.querySelector<HTMLInputElement>('.heroes-container')
+const movieInputBox = document.querySelector<HTMLInputElement>('#moviesInput')
+const moviesForm = document.querySelector<HTMLFormElement>('#moviesForm')
 
-if(!heroImgsContainer){
-    throw new Error('oculdnt find it!')
+if(!heroImgsContainer || !movieInputBox || !moviesForm){
+    throw new Error('couldnt find it!')
 }
 
 type Hero = {
@@ -12,6 +14,19 @@ type Hero = {
     image_url: string,
     real_name: string,
     description: string
+}
+
+type Movie = {
+    id : number,
+    title : string,
+    release_year : number
+}
+
+const handleMovieSearch = async (event : SubmitEvent) => {
+    event?.preventDefault();
+    const inputValue = movieInputBox.value;
+        console.log(inputValue);
+        console.log("movieSearch");
 }
 
 const handleImgClick = (hero: Hero, heroContainer: HTMLDivElement) => {
@@ -58,7 +73,6 @@ const handleImgUpdate = async () => {
     });
 }
 
-
-
 handleImgUpdate()
 
+moviesForm.addEventListener("submit", handleMovieSearch);
