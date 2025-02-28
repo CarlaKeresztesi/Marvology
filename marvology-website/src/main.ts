@@ -1,15 +1,8 @@
 import './style.scss'
 
 const heroImgsContainer = document.querySelector<HTMLInputElement>('.heroes-container')
-const movieInputBox = document.querySelector<HTMLInputElement>('#moviesInput')
-const moviesForm = document.querySelector<HTMLFormElement>('#moviesForm')
-const moviesSelected = document.querySelector<HTMLDivElement>('.movies-container--selectedMovies')
-const addMoveForm = document.querySelector<HTMLFormElement>('#movieAddName')
-const movieAddNameInput = document.querySelector<HTMLInputElement>('#movieAddName')
-const movieAddYearInput = document.querySelector<HTMLInputElement>('#movieAddYear')
 
-
-if(!heroImgsContainer || !movieInputBox || !moviesForm || !moviesSelected ){
+if(!heroImgsContainer){
     throw new Error('couldnt find it!')
 }
 
@@ -21,46 +14,6 @@ type Hero = {
     description: string
 }
 
-type Movie = {
-    id : number,
-    title : string,
-    release_year : number
-}
-
-const handleMoveiPost = async (event : SubmitEvent) => {
-    event?.preventDefault();
-    const response = await fetch("http://localhost:8080/movies/addMovie", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title: movieAddNameInput.value, release_year: movieAddYearInput.value }),
-  });
-  return await response.json();
-}
-
-const handleMovieSearch = async (event : SubmitEvent) => {
-    event?.preventDefault();
-    moviesSelected.innerHTML = "";
-    const response = await fetch("http://localhost:8080/movies/");
-    const arrOfMovies = await response.json();
-    const inputValue = movieInputBox.value;
-        console.log(inputValue);
-        console.log("movieSearch");
-        console.log(arrOfMovies);
-        arrOfMovies.forEach((movie : Movie) => {
-            const newInput = inputValue.toLowerCase();
-            const newTitle = movie.title.toLowerCase();
-            console.log("not in the if")
-            console.log(newInput)
-            console.log(movie.title)
-            if (newTitle.includes(newInput)) {
-                const movieText = document.createElement('p');
-                movieText.className = 'movie-text';
-                moviesSelected.appendChild(movieText);
-                movieText.innerText = `${movie.title}`;
-                console.log("in if stat")
-            }
-        } )
-}
 
 const handleImgClick = (hero: Hero, heroContainer: HTMLDivElement) => {
     console.log(hero.alias)
@@ -107,6 +60,3 @@ const handleImgUpdate = async () => {
 }
 
 handleImgUpdate()
-
-addMoveForm?.addEventListener("submit", handleMoveiPost)
-moviesForm.addEventListener("submit", handleMovieSearch);

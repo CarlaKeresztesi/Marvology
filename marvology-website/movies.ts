@@ -4,23 +4,40 @@ import './src/style.scss'
 const movieInputBox = document.querySelector<HTMLInputElement>('#moviesInput')
 const moviesForm = document.querySelector<HTMLFormElement>('#moviesForm')
 const moviesSelected = document.querySelector<HTMLDivElement>('.movies-container--selectedMovies')
+const addMoveForm = document.querySelector<HTMLFormElement>('#addMovieForm')
+const movieAddNameInput = document.querySelector<HTMLInputElement>('#movieAddName')
+const movieAddYearInput = document.querySelector<HTMLInputElement>('#movieAddYear')
 
-if(!movieInputBox || !moviesForm || !moviesSelected){
+if(!movieInputBox || !moviesForm || !moviesSelected || !addMoveForm || !movieAddNameInput || !movieAddYearInput){
     throw new Error('couldnt find it!')
-}
-
-type Hero = {
-    id : number,
-    alias: string,
-    image_url: string,
-    real_name: string,
-    description: string
 }
 
 type Movie = {
     id : number,
     title : string,
     release_year : number
+}
+
+const handleMoveiPost = async (event : SubmitEvent) => {
+    event?.preventDefault();
+
+    const movieTitle = movieAddNameInput.value.trim();
+    const movieYear = parseInt(movieAddYearInput.value);
+
+    const movieData = {
+        title: movieTitle,
+        release_year: movieYear,
+    };
+    const response = await fetch("http://localhost:8080/movies/addMovie", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(movieData),
+        });
+
+    const data = await response.json();
+        console.log("Movie added successfully:", data);
 }
 
 const handleMovieSearch = async (event : SubmitEvent) => {
@@ -48,4 +65,5 @@ const handleMovieSearch = async (event : SubmitEvent) => {
         } )
 }
 
+addMoveForm?.addEventListener("submit", handleMoveiPost)
 moviesForm.addEventListener("submit", handleMovieSearch);
