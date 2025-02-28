@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/heroes")
+@CrossOrigin(origins = "http://localhost:5173")
 public class HeroController {
         private MarvelRepo marvelRepo;
 

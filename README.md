@@ -1,5 +1,24 @@
-# Marvology
+![Marvology banner.jpg](Marvology%20banner.jpg)
 
-Hi, it's Piravien...
-Hi, its Ahmed Hussain !
-Hi, it's Carla
+
+## Overview
+
+&nbsp;&nbsp;&nbsp;&nbsp; Marvology is a full-stack application project consisting of:
+
+- a TypeScript frontend;
+
+- a Spring Boot server;
+
+- a MySQL database.
+
+
+## 💻Technologies Used
+
+* **Frontend:** TypeScript, HTML, SCSS, BEM
+* **Backend:** Spring Boot
+* **Database:** MySQL
+* **IntelliJ IDEA** (recommended IDE)
+* **Visual Studio code** 
+* **Postman**
+* **Railway**
+
