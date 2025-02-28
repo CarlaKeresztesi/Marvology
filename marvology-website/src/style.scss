@@ -6,3 +6,24 @@
 .notClicked{
     display: flex;
 }
+
+.nav-container{
+    border: solid green 3px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.nav-container--title{
+    // display: flex;
+    text-align: center;
+
+}
+.nav-container--list{
+    display: flex;
+    // text-align: center;
+    justify-content: space-around;
+    margin: 10px;
+    border: solid black 2px;
+
+}
